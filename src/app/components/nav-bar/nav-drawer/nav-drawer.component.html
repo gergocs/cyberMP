@@ -1,0 +1,23 @@
+<ul id="navbar-list" class="navbar-nav override">
+  <li (click)="onNavLinkClicked($event)">
+    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/">Home</button>
+  </li>
+  <li (click)="onNavLinkClicked($event)">
+    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/">About</button>
+  </li>
+  <li (click)="onNavLinkClicked($event)" *ngIf="authService.isLoggedIn">
+    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/forum">Forum</button>
+  </li>
+  <li (click)="onSignOutClicked($event)" *ngIf="authService.isLoggedIn">
+    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/">Sign out</button>
+  </li>
+  <li (click)="onNavLinkClicked($event)" *ngIf="!authService.isLoggedIn">
+    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/sign-in">Sign-in</button>
+  </li>
+  <li (click)="onNavLinkClicked($event)" *ngIf="!authService.isLoggedIn">
+    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/register-user">Register</button>
+  </li>
+
+
+</ul>
+<span class="drawer-inset-shadow"></span>

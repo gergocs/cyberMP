@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostBinding} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cyberMP';
+
+  name = 'NavigationBarProject';
+
+  @HostBinding("class.drawer-open")
+  isDrawerOpen: boolean = false;
+
+  toggleDrawer(isDrawerOpen: boolean) {
+    this.isDrawerOpen = isDrawerOpen;
+  }
 }
