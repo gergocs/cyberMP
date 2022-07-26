@@ -1,6 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import {DragScrollComponent} from "ngx-drag-scroll";
-import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-home',
@@ -10,9 +9,7 @@ import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 export class HomeComponent implements OnInit {
   private counter = 0;
   private left = false;
-
-  faLeft = faArrowLeft;
-  faRight = faArrowRight;
+  width: number = 400;
 
   constructor() { }
 
@@ -20,6 +17,15 @@ export class HomeComponent implements OnInit {
   }
   // @ts-ignore
   @ViewChild('nav', {read: DragScrollComponent}) ds: DragScrollComponent;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(_ : any) {
+    if (window.innerWidth < 1100){
+      this.width = window.innerWidth - 400;
+    } else {
+      this.width = 600;
+    }
+  }
 
   moveLeft() {
     this.ds.moveLeft();

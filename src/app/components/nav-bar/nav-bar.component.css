@@ -24,7 +24,7 @@
 }
 
 .nav-toggler span:nth-child(1) {
-  top:26%;
+  top: 26%;
 }
 
 .nav-toggler span:nth-child(2) {
@@ -42,7 +42,7 @@
 }
 
 .nav-toggler.drawer-open span:nth-child(1) {
-  top:50%;
+  top: 50%;
   left: 50%;
   width: 0%;
   opacity: 0;
@@ -59,7 +59,7 @@
 }
 
 .nav-toggler.drawer-open span:nth-child(4) {
-  bottom:50%;
+  bottom: 50%;
   left: 50%;
   width: 0%;
   opacity: 0;
@@ -73,7 +73,7 @@
   font-weight: bold;
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 62rem) {
 
   .nav-toggler,
   .nav-toggler.open {
@@ -83,5 +83,4 @@
   .navbar-brand.override {
     margin: 0 1rem 0 0;
   }
-
 }

@@ -1,0 +1,7 @@
+img{
+  width: 400px;
+}
+
+::ng-deep .mat-paginator-range-label{
+  display: none !important;
+}

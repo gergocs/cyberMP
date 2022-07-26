@@ -1,21 +1,33 @@
 <ul id="navbar-list" class="navbar-nav override">
   <li (click)="onNavLinkClicked($event)">
-    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/">Home</button>
+    <button mat-raised-button class="btn btn-danger btn-round glitch" data-text="Home" routerLink="/">
+      Home
+    </button>
   </li>
   <li (click)="onNavLinkClicked($event)">
-    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/">About</button>
+    <button mat-raised-button class="btn btn-danger btn-round glitch" data-text="Server" routerLink="/servers">
+      Server
+    </button>
+  </li>
+  <li (click)="onNavLinkClicked($event)">
+    <button mat-raised-button class="btn btn-danger btn-round glitch color" data-text="Help" routerLink="/documentation">
+      Help
+    </button>
   </li>
   <li (click)="onNavLinkClicked($event)" *ngIf="authService.isLoggedIn">
-    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/forum">Forum</button>
+    <button mat-raised-button class="btn btn-danger btn-round glitch" data-text="Forum" routerLink="/forum">
+      Forum
+    </button>
   </li>
   <li (click)="onSignOutClicked($event)" *ngIf="authService.isLoggedIn">
-    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/">Sign out</button>
+    <button mat-raised-button class="btn btn-danger btn-round glitch" data-text="Sing-out" routerLink="/">
+      Sign-out
+    </button>
   </li>
   <li (click)="onNavLinkClicked($event)" *ngIf="!authService.isLoggedIn">
-    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/sign-in">Sign-in</button>
-  </li>
-  <li (click)="onNavLinkClicked($event)" *ngIf="!authService.isLoggedIn">
-    <button mat-raised-button class="btn btn-danger btn-round" routerLink="/register-user">Register</button>
+    <button mat-raised-button class="btn btn-danger btn-round glitch" data-text="Sign-in" routerLink="/sign-in">
+      Sign-in
+    </button>
   </li>
 
 

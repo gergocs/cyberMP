@@ -8,6 +8,8 @@ import {VerifyEmailComponent} from "../../components/verify-email/verify-email.c
 import {HomeComponent} from "../../components/home/home.component";
 import {AuthGuard} from "../../guards/auth.guard";
 import {ForumComponent} from "../../components/forum/forum.component";
+import {DocumentationComponent} from "../../components/documentation/documentation.component";
+import {ServersComponent} from "../../components/servers/servers.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path: 'register-user', component: SignUpComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
   {path: 'verify-email-address', component: VerifyEmailComponent},
-  {path: 'forum', pathMatch: 'full', component:ForumComponent, canActivate: [AuthGuard]},
+  {path: 'documentation', component: DocumentationComponent},
+  {path: 'servers', component: ServersComponent},
+  {path: 'forum', pathMatch: 'full', component: ForumComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

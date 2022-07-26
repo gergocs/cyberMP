@@ -1,0 +1,23 @@
+<div class="flex justify-center items-center space-x-10 mt-40">
+  <mat-card class="bg-yellow-300"
+            *ngFor="let server of server$ | async |slice:((paginator.pageIndex)*paginator.pageSize):((paginator.pageIndex+1)*paginator.pageSize)">
+    <mat-card-header class="flex justify-center items-center">
+      <mat-card-title>
+        <h2 class="text-red-900">
+          {{server.name}}
+        </h2>
+      </mat-card-title>
+    </mat-card-header>
+    <div class="flex justify-center items-center">
+      <mat-card-subtitle>
+        <button [cdkCopyToClipboard]=server.ip (click)="openSnackBar()">{{server.ip}}</button>
+        </mat-card-subtitle>
+    </div>
+    <mat-card-content class="flex justify-center items-center ml-4">
+        <img mat-card-image src={{server.image}} alt="Photo from the server">
+    </mat-card-content>
+  </mat-card>
+</div>
+<mat-paginator class="mt-40 text-yellow-600 font-bold"
+  style-paginator showFirstLastButtons #paginator [length]="length" [pageSize]="pageSize">
+</mat-paginator>

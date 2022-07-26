@@ -1,23 +1,17 @@
 <div>
-  <div class="px-6">
-    <h1 class="center">CyberMP</h1>
+  <div class="px-6 place-content-center place-items-center place-self-center">
+    <h1 class="place-self-center">CyberMP</h1>
     <h2>
       CyberMP is a mod for Cyberpunk 2077 enabling you to play multiplayer with your friends.
     </h2>
   </div>
   <div class="grid h-screen place-items-center">
     <div>
-      <div class="float-left flex items-center justify-center h-screen px-6 -my-52">
-        <button class="btn btn-primary btn-fab btn-icon btn-round" (click)="moveLeft()"><fa-icon [icon]="faLeft"></fa-icon></button>
-      </div>
-      <drag-scroll #nav class="float-left">
-        <img drag-scroll-item src="https://www.cyberpunk.net/build/images/home3/screen-image-mercenary-e79283ec.jpg" alt="image1"/>
-        <img drag-scroll-item src="https://www.cyberpunk.net/build/images/home3/screen-image-about-08a097de.jpg" alt="image2"/>
-        <img drag-scroll-item src="https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg" alt="image3"/>
+      <drag-scroll #nav class="float-left" [ngStyle]="{'width:': width - 200}">
+        <img drag-scroll-item src="https://www.cyberpunk.net/build/images/home3/screen-image-mercenary-e79283ec.jpg" alt="image1" [ngStyle]="{'width:': width}"/>
+        <img drag-scroll-item src="https://www.cyberpunk.net/build/images/home3/screen-image-about-08a097de.jpg" alt="image2" [ngStyle]="{'width:': width}"/>
+        <img drag-scroll-item src="https://www.cyberpunk.net/build/images/home3/screen-image-city-209a8285.jpg" alt="image3" [ngStyle]="{'width:': width}"/>
       </drag-scroll>
-      <div class="float-left flex items-center justify-center h-screen px-6 -my-52">
-        <button class="btn btn-primary btn-fab btn-icon btn-round" (click)="moveRight()"><fa-icon [icon]="faRight"></fa-icon></button>
-      </div>
     </div>
   </div>
 </div>

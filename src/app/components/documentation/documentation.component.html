@@ -1,0 +1,18 @@
+<div class="container mt-20">
+  <mat-accordion [multi]="true" class="space-y-4" *ngFor="let document of documentation">
+    <mat-expansion-panel class="bg-yellow-300 shadow" hideToggle>
+      <mat-expansion-panel-header class="specific-class">
+        <mat-panel-title class="text-2xl">
+          {{document.title}}
+        </mat-panel-title>
+        <mat-panel-description class="text-fuchsia-900">
+          {{document.summary}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p class="text-blue-900 pt-10">
+        {{document.content}}
+      </p>
+    </mat-expansion-panel>
+    <mat-divider class="p-1"></mat-divider>
+  </mat-accordion>
+</div>
