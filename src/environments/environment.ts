@@ -12,6 +12,6 @@ export const environment = {
     messagingSenderId: "526986386099",
     appId: "1:526986386099:web:aa7758f4a5af747476eec6",
     measurementId: "G-FK0ZXWBGPC"
-  } //https://cibermp-97c69.firebaseapp.com/__/auth/handler
+  },
 };
 

@@ -7,7 +7,6 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 import {Router} from '@angular/router';
-import {user} from "@angular/fire/auth";
 
 @Injectable({
   providedIn: 'root',
@@ -28,28 +27,8 @@ export class AuthService {
     });
   }
 
-  SendVerificationMail() {
-    return this.afAuth.currentUser
-      .then((u: any) => u.sendEmailVerification())
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
-      });
-  }
-
-  ForgotPassword(passwordResetEmail: string) {
-    return this.afAuth
-      .sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
-  }
-
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user')!);
-    return user !== null && user.emailVerified !== false;
+    return JSON.parse(localStorage.getItem('user')!) !== null;
   }
 
   get isAdminLoggedIn(): boolean {
@@ -59,6 +38,22 @@ export class AuthService {
 
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
+      if (res) {
+        this.router.navigate(['/']);
+      }
+    });
+  }
+
+  GitHubAuth() {
+    return this.AuthLogin(new auth.GithubAuthProvider()).then((res: any) => {
+      if (res) {
+        this.router.navigate(['/']);
+      }
+    });
+  }
+
+  FacebookAuth() {
+    return this.AuthLogin(new auth.FacebookAuthProvider()).then((res: any) => {
       if (res) {
         this.router.navigate(['/']);
       }

@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.ds.moveTo(0);
     }, 0);
-    const intervalId = window.setInterval(() => {
+    window.setInterval(() => {
       if (this.counter <= 0) {
         this.counter = 0;
         this.left = false;
@@ -59,6 +59,16 @@ export class HomeComponent implements OnInit {
         this.counter++;
       }
     }, 5000);
+  }
+
+  download(){
+    const link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'abc.net/files/test.ino');
+    link.setAttribute('download', `products.csv`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 
 }

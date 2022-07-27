@@ -121,6 +121,7 @@
 @import "angular/example-pages";
 
 @import "custom/glitch";
+@import "fancyButtons";
 
 body::-webkit-scrollbar {
   width: 20px;
@@ -141,4 +142,20 @@ body::-webkit-scrollbar-thumb {
 .snackbar {
   background: #F44336 !important;
   color: white !important;
+}
+
+.disable-text-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
