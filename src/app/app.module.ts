@@ -33,6 +33,11 @@ import { StylePaginatorDirective } from './directives/style-paginator.directive'
 import {MatSelectConfig} from "@angular/material/select";
 import {ClipboardModule} from "@angular/cdk/clipboard";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -66,6 +71,11 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
     MatPaginatorModule,
     MatSnackBarModule,
     ClipboardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
